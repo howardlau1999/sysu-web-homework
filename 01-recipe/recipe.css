@@ -27,7 +27,7 @@ body {
     background-attachment: fixed;
 }
 
-blockquote {
+.comment {
     font-style: italic;
     background-color: #FFFFC8;
 }
