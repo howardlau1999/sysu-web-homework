@@ -1,0 +1,203 @@
+$initial-degree : -120;
+$rotate-interval : 35;
+$icon-size: 36px;
+$icon-number: 6;
+$icons: 'signout''setting''message''history''mask';
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+.page {
+    font-weight: bold; 
+    color: #FFF;
+    font-size: 26px;
+}
+.mine {
+    font-weight: bold;
+    font-size: 30px;
+    color: #079E6E;
+}
+.page > img, .mine > img {
+    width: 34px;
+    height: 34px;
+}
+.user {
+    position: absolute;
+    left: 50px;
+    top: 20px;
+}
+.user span {
+    position: relative;
+    left: 20px;
+    top: -5px;
+}
+.comment {
+    position: absolute;
+    left: 40px;
+    top: 64px;
+    font-size: 45px;
+}
+.comment span {
+    position: relative;
+    top: -5px;
+    left: 20px;
+}
+.comment img {
+    width: 40px;
+    height: 40px;
+}
+.posted {
+    position: absolute;
+    left: 30px;
+    top: 115px;
+}
+.posted span {
+    position: relative;
+    left: 4px;
+    top: -5px;
+}
+.like {
+    position: absolute;
+    left: 95px;
+    top: 115px;
+}
+.like span {
+    position: relative;
+    left: 4px;
+    top: -5px;
+}
+@mixin transition($property) {
+    transition: $property;
+    -moz-transition: $property;
+    -webkit-transition: $property;
+    -o-transition: $property;
+    -ms-transition: $property;
+}
+
+.info-bar {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 80px;
+    border-radius: 50%;
+    background-color: #7E7E7E;
+    @include transition(all 0.3s ease);
+    overflow: hidden;
+    opacity: 0;
+}
+
+.ring-menu:hover .info-bar {
+    width: 174px;
+    height: 174px;
+    left: -50px;
+    top: -184px;
+    opacity: 1;
+}
+
+.center-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #6E6E6E;
+    position: absolute;
+    background-image: url("./assets/images/atplus_white.png");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    @include transition(0.5s ease);
+    opacity: 0.6;
+    background-color: rgba(48, 63, 159, 1);
+    background-size: 80% 60%;
+}
+
+.ring-menu:hover .center-button {
+    background-color: rgba(48, 63, 159, 1);
+    background-image: url("./assets/images/atplus_green.png");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 1;
+    width: 70px;
+    height: 70px;
+}
+
+.ring-menu {
+    text-align: center;
+    position: absolute;
+    top: 400px;
+    left: 400px;
+    width: $icon-size;
+    height: $icon-size;
+}
+
+.menu-container {
+    transform: translateX($icon-size * 2) translateY($icon-size * 2);
+    width: 100%;
+    height: 100%;
+}
+
+.ring-menu:hover {
+    width: $icon-size * 5;
+    height: $icon-size * 5;
+}
+
+.ring-button {
+    width: $icon-size;
+    height: $icon-size;
+    border-radius: 50%;
+    background-color: #6E6E6E;
+    opacity: 0;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    @include transition(all 0.3s ease);
+}
+
+.ring-button-wrapper {
+    height: $icon-size;
+    width: $icon-size;
+    position: absolute;
+}
+
+.unread {
+    background-color: #F00;
+    color: white;
+    position: absolute;
+    width: $icon-size / 2;
+    height: $icon-size / 2;
+    border-radius: 50%;
+    text-align: center;
+    right: -$icon-size / 8;
+    top: -$icon-size / 8;
+}
+
+@for $i from 1 through $icon-number {
+    .ring-button-wrapper:nth-child(#{$i}) {
+        transform: rotate(#{($i - 1) * $rotate-interval + $initial-degree}deg);
+    }
+
+    .ring-menu:hover .ring-button-wrapper:nth-child(#{$i}) {
+        transform: rotate(#{($i - 1) * $rotate-interval + $initial-degree}deg);
+        width: 70px;
+        height: 70px;
+    }
+
+    .ring-menu:hover .ring-button-wrapper:nth-child(#{$i})>.ring-button {
+        transform: translateX(-$icon-size*1.5) rotate(#{-(($i - 1) * $rotate-interval + $initial-degree)}deg);
+        opacity: 1;
+    }
+
+}
+
+@each $icon in $icons {
+    .ring-button##{$icon} {
+        background-image: url("./assets/images/#{$icon}.png");
+    }
+}
