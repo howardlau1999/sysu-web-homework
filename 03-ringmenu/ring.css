@@ -144,15 +144,14 @@ ul {
   height: 36px;
 }
 
-.menu-container {
-  transform: translateX(72px) translateY(72px);
-  width: 100%;
-  height: 100%;
+.center-button {
+  top: 100px;
+  left: 100px;
 }
 
 .ring-menu:hover {
-  width: 180px;
-  height: 180px;
+  width: 288px;
+  height: 288px;
 }
 
 .ring-button {
