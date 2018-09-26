@@ -138,15 +138,14 @@ ul {
     height: $icon-size;
 }
 
-.menu-container {
-    transform: translateX($icon-size * 2) translateY($icon-size * 2);
-    width: 100%;
-    height: 100%;
+.center-button {
+    top: 100px;
+    left: 100px;
 }
 
 .ring-menu:hover {
-    width: $icon-size * 5;
-    height: $icon-size * 5;
+    width: $icon-size * 8;
+    height: $icon-size * 8;
 }
 
 .ring-button {
