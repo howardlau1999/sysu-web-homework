@@ -71,25 +71,36 @@ ul {
   position: absolute;
   width: 0;
   height: 0;
+  left: 0;
   top: 80px;
   border-radius: 50%;
   background-color: #7E7E7E;
-  transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s;
   overflow: hidden;
   opacity: 0; }
 
-.ring-menu:hover .info-bar {
+.center-button:hover .info-bar {
   width: 174px;
   height: 174px;
   left: -50px;
   top: -184px;
-  opacity: 1; }
+  opacity: 1;
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
 .center-button {
+  margin: 0 auto;
+  left: 0;
+  right: 0; }
+
+.apb {
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -98,21 +109,16 @@ ul {
   background-image: url("./assets/images/atplus_white.png");
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  transition: 0.5s ease;
-  -moz-transition: 0.5s ease;
-  -webkit-transition: 0.5s ease;
-  -o-transition: 0.5s ease;
-  -ms-transition: 0.5s ease;
+  transition: 0.5s ease 0.27s;
+  -moz-transition: 0.5s ease 0.27s;
+  -webkit-transition: 0.5s ease 0.27s;
+  -o-transition: 0.5s ease 0.27s;
+  -ms-transition: 0.5s ease 0.27s;
   opacity: 0.6;
   background-color: #303f9f;
-  background-size: 80% 60%;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; }
+  background-size: 80% 60%; }
 
-.ring-menu:hover .center-button {
+.center-button:hover .apb {
   background-color: #303f9f;
   background-image: url("./assets/images/atplus_green.png");
   background-position: 50% 50%;
@@ -139,16 +145,21 @@ ul {
   opacity: 0;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease; }
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
 .ring-button-wrapper {
   height: 36px;
   width: 36px;
   position: absolute; }
+
+#control-ring-container {
+  margin: 0 auto;
+  left: 0;
+  right: 0; }
 
 .unread {
   background-color: #F00;
@@ -162,76 +173,166 @@ ul {
   top: -4.5px; }
 
 .ring-button-wrapper:nth-child(1) {
-  transform: rotate(-120deg); }
+  transform: rotate(-130deg);
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
-.ring-menu:hover .ring-button-wrapper:nth-child(1) {
-  transform: rotate(-120deg);
+.center-button:hover .ring-button-wrapper:nth-child(1) {
+  transform: rotate(-130deg);
   width: 70px;
-  height: 70px; }
+  height: 70px;
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
-.ring-menu:hover .ring-button-wrapper:nth-child(1) > .ring-button {
-  transform: translateX(-54px) rotate(120deg);
-  opacity: 1; }
+.center-button:hover .ring-button-wrapper:nth-child(1) > .ring-button {
+  transform: translateX(-54px) rotate(130deg);
+  opacity: 1;
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
 .ring-button-wrapper:nth-child(2) {
-  transform: rotate(-85deg); }
+  transform: rotate(-94deg);
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
-.ring-menu:hover .ring-button-wrapper:nth-child(2) {
-  transform: rotate(-85deg);
+.center-button:hover .ring-button-wrapper:nth-child(2) {
+  transform: rotate(-94deg);
   width: 70px;
-  height: 70px; }
+  height: 70px;
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
-.ring-menu:hover .ring-button-wrapper:nth-child(2) > .ring-button {
-  transform: translateX(-54px) rotate(85deg);
-  opacity: 1; }
+.center-button:hover .ring-button-wrapper:nth-child(2) > .ring-button {
+  transform: translateX(-54px) rotate(94deg);
+  opacity: 1;
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
 .ring-button-wrapper:nth-child(3) {
-  transform: rotate(-50deg); }
+  transform: rotate(-58deg);
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
-.ring-menu:hover .ring-button-wrapper:nth-child(3) {
-  transform: rotate(-50deg);
+.center-button:hover .ring-button-wrapper:nth-child(3) {
+  transform: rotate(-58deg);
   width: 70px;
-  height: 70px; }
+  height: 70px;
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
-.ring-menu:hover .ring-button-wrapper:nth-child(3) > .ring-button {
-  transform: translateX(-54px) rotate(50deg);
-  opacity: 1; }
+.center-button:hover .ring-button-wrapper:nth-child(3) > .ring-button {
+  transform: translateX(-54px) rotate(58deg);
+  opacity: 1;
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
 .ring-button-wrapper:nth-child(4) {
-  transform: rotate(-15deg); }
+  transform: rotate(-22deg);
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
-.ring-menu:hover .ring-button-wrapper:nth-child(4) {
-  transform: rotate(-15deg);
+.center-button:hover .ring-button-wrapper:nth-child(4) {
+  transform: rotate(-22deg);
   width: 70px;
-  height: 70px; }
+  height: 70px;
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
-.ring-menu:hover .ring-button-wrapper:nth-child(4) > .ring-button {
-  transform: translateX(-54px) rotate(15deg);
-  opacity: 1; }
+.center-button:hover .ring-button-wrapper:nth-child(4) > .ring-button {
+  transform: translateX(-54px) rotate(22deg);
+  opacity: 1;
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
 .ring-button-wrapper:nth-child(5) {
-  transform: rotate(20deg); }
+  transform: rotate(14deg);
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
-.ring-menu:hover .ring-button-wrapper:nth-child(5) {
-  transform: rotate(20deg);
+.center-button:hover .ring-button-wrapper:nth-child(5) {
+  transform: rotate(14deg);
   width: 70px;
-  height: 70px; }
+  height: 70px;
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
-.ring-menu:hover .ring-button-wrapper:nth-child(5) > .ring-button {
-  transform: translateX(-54px) rotate(-20deg);
-  opacity: 1; }
+.center-button:hover .ring-button-wrapper:nth-child(5) > .ring-button {
+  transform: translateX(-54px) rotate(-14deg);
+  opacity: 1;
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
 .ring-button-wrapper:nth-child(6) {
-  transform: rotate(55deg); }
+  transform: rotate(50deg);
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
-.ring-menu:hover .ring-button-wrapper:nth-child(6) {
-  transform: rotate(55deg);
+.center-button:hover .ring-button-wrapper:nth-child(6) {
+  transform: rotate(50deg);
   width: 70px;
-  height: 70px; }
+  height: 70px;
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
-.ring-menu:hover .ring-button-wrapper:nth-child(6) > .ring-button {
-  transform: translateX(-54px) rotate(-55deg);
-  opacity: 1; }
+.center-button:hover .ring-button-wrapper:nth-child(6) > .ring-button {
+  transform: translateX(-54px) rotate(-50deg);
+  opacity: 1;
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s; }
 
 .ring-button#signout {
   background-image: url("./assets/images/signout.png"); }

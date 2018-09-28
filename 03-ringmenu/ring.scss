@@ -1,5 +1,5 @@
-$initial-degree : -120;
-$rotate-interval : 35;
+$initial-degree : -130;
+$rotate-interval : 36;
 $icon-size: 36px;
 $icon-number: 6;
 $icons: 'signout''setting''message''history''mask';
@@ -88,23 +88,31 @@ ul {
     position: absolute;
     width: 0;
     height: 0;
+    left: 0;
     top: 80px;
     border-radius: 50%;
     background-color: #7E7E7E;
-    @include transition(all 0.3s ease);
+    @include transition(all 0.3s ease 0.27s);
     overflow: hidden;
     opacity: 0;
 }
 
-.ring-menu:hover .info-bar {
+.center-button:hover .info-bar {
     width: 174px;
     height: 174px;
     left: -50px;
     top: -184px;
     opacity: 1;
+    @include transition(all 0.3s ease 0.27s);
 }
 
 .center-button {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.apb {
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -113,18 +121,13 @@ ul {
     background-image: url("./assets/images/atplus_white.png");
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    @include transition(0.5s ease);
+    @include transition(0.5s ease 0.27s);
     opacity: 0.6;
     background-color: rgba(48, 63, 159, 1);
     background-size: 80% 60%;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
 }
 
-.ring-menu:hover .center-button {
+.center-button:hover .apb {
     background-color: rgba(48, 63, 159, 1);
     background-image: url("./assets/images/atplus_green.png");
     background-position: 50% 50%;
@@ -153,13 +156,19 @@ ul {
     opacity: 0;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    @include transition(all 0.3s ease);
+    @include transition(all 0.3s ease 0.27s);
 }
 
 .ring-button-wrapper {
     height: $icon-size;
     width: $icon-size;
     position: absolute;
+}
+
+#control-ring-container {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
 }
 
 .unread {
@@ -177,17 +186,20 @@ ul {
 @for $i from 1 through $icon-number {
     .ring-button-wrapper:nth-child(#{$i}) {
         transform: rotate(#{($i - 1) * $rotate-interval + $initial-degree}deg);
+        @include transition(all 0.3s ease 0.27s);
     }
 
-    .ring-menu:hover .ring-button-wrapper:nth-child(#{$i}) {
+    .center-button:hover .ring-button-wrapper:nth-child(#{$i}) {
         transform: rotate(#{($i - 1) * $rotate-interval + $initial-degree}deg);
         width: 70px;
         height: 70px;
+        @include transition(all 0.3s ease 0.27s);
     }
 
-    .ring-menu:hover .ring-button-wrapper:nth-child(#{$i})>.ring-button {
+    .center-button:hover .ring-button-wrapper:nth-child(#{$i})>.ring-button {
         transform: translateX(-$icon-size*1.5) rotate(#{-(($i - 1) * $rotate-interval + $initial-degree)}deg);
         opacity: 1;
+        @include transition(all 0.3s ease 0.27s);
     }
 
 }
