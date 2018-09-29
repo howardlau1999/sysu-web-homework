@@ -155,8 +155,8 @@ ul {
   left: 0px;
   right: 0px;
   margin: 0 auto;
-  width: 216px;
-  height: 216px;
+  width: 36px;
+  height: 36px;
 }
 
 .ring-button {
@@ -209,55 +209,35 @@ ul {
   top: -4.5px;
 }
 
-.ring-button#signout {
-  background-image: url("./assets/images/signout.png");
-}
-
-.ring-button#setting {
-  background-image: url("./assets/images/setting.png");
-}
-
-.ring-button#message {
-  background-image: url("./assets/images/message.png");
-}
-
-.ring-button#history {
-  background-image: url("./assets/images/history.png");
-}
-
-.ring-button#mask {
-  background-image: url("./assets/images/mask.png");
-}
-
-#button:hover #control-ring li {
+#button:hover .ring-button {
   opacity: 1;
 }
 
-#button:hover #control-ring li:nth-child(1) {
+#button:hover .ring-button:nth-child(1) {
   margin-top: 20px;
   margin-left: -30px;
   background-image: url("assets/images/nomask.png");
 }
 
-#button:hover #control-ring li:nth-child(2) {
+#button:hover .ring-button:nth-child(2) {
   margin-top: 60px;
   margin-left: -40px;
   background-image: url("assets/images/history.png");
 }
 
-#button:hover #control-ring li:nth-child(3) {
+#button:hover .ring-button:nth-child(3) {
   margin-top: 102px;
   margin-left: -26px;
   background-image: url("assets/images/message.png");
 }
 
-#button:hover #control-ring li:nth-child(4) {
+#button:hover .ring-button:nth-child(4) {
   margin-top: 129px;
   margin-left: 12px;
   background-image: url("assets/images/setting.png");
 }
 
-#button:hover #control-ring li:nth-child(5) {
+#button:hover .ring-button:nth-child(5) {
   margin-top: 128px;
   margin-left: 60px;
   background-image: url("assets/images/signin.png");
