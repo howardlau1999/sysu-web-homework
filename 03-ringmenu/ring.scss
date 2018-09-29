@@ -1,9 +1,8 @@
-$initial-degree : -130;
-$rotate-interval : 36;
+$initial-degree: -130;
+$rotate-interval: 36;
 $icon-size: 36px;
 $icon-number: 6;
 $icons: 'signout''setting''message''history''mask';
-
 * {
     padding: 0;
     margin: 0;
@@ -18,64 +17,77 @@ ul {
 }
 
 .page {
-    font-weight: bold; 
+    font-weight: bold;
     color: #FFF;
     font-size: 26px;
 }
+
 .mine {
     font-weight: bold;
     font-size: 30px;
     color: #079E6E;
 }
-.page > img, .mine > img {
+
+.page>img,
+.mine>img {
     width: 34px;
     height: 34px;
 }
+
 .user {
     position: absolute;
     left: 50px;
     top: 20px;
 }
+
 .user span {
     position: relative;
     left: 20px;
     top: -5px;
 }
+
 .comment {
     position: absolute;
     left: 40px;
     top: 64px;
     font-size: 45px;
 }
+
 .comment span {
     position: relative;
     top: -5px;
     left: 20px;
 }
+
 .comment img {
     width: 40px;
     height: 40px;
 }
+
 .posted {
     position: absolute;
     left: 30px;
     top: 115px;
 }
+
 .posted span {
     position: relative;
     left: 4px;
     top: -5px;
 }
+
 .like {
     position: absolute;
     left: 95px;
     top: 115px;
 }
+
 .like span {
     position: relative;
     left: 4px;
     top: -5px;
 }
+
 @mixin transition($property) {
     transition: $property;
     -moz-transition: $property;
@@ -152,10 +164,13 @@ ul {
     width: $icon-size;
     height: $icon-size;
     border-radius: 50%;
+    margin-top: 60px;
+    margin-left: 35px;
     background-color: #6E6E6E;
     opacity: 0;
     background-position: 50% 50%;
     background-repeat: no-repeat;
+    position: absolute;
     @include transition(all 0.3s ease 0.27s);
 }
 
@@ -165,10 +180,18 @@ ul {
     position: absolute;
 }
 
+#control-ring {
+    position: absolute;
+    margin-left: 50px;
+}
+
 #control-ring-container {
-    margin: 0 auto;
-    left: 0;
-    right: 0;
+    left: -65px;
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    top: -40px;
+    border-radius: 50%;
 }
 
 .unread {
@@ -183,29 +206,36 @@ ul {
     top: -$icon-size / 8;
 }
 
-@for $i from 1 through $icon-number {
-    .ring-button-wrapper:nth-child(#{$i}) {
-        transform: rotate(#{($i - 1) * $rotate-interval + $initial-degree}deg);
-        @include transition(all 0.3s ease 0.27s);
-    }
-
-    .center-button:hover .ring-button-wrapper:nth-child(#{$i}) {
-        transform: rotate(#{($i - 1) * $rotate-interval + $initial-degree}deg);
-        width: 70px;
-        height: 70px;
-        @include transition(all 0.3s ease 0.27s);
-    }
-
-    .center-button:hover .ring-button-wrapper:nth-child(#{$i})>.ring-button {
-        transform: translateX(-$icon-size*1.5) rotate(#{-(($i - 1) * $rotate-interval + $initial-degree)}deg);
-        opacity: 1;
-        @include transition(all 0.3s ease 0.27s);
-    }
-
+#button:hover .ring-button {
+    opacity: 1;
 }
 
-@each $icon in $icons {
-    .ring-button##{$icon} {
-        background-image: url("./assets/images/#{$icon}.png");
-    }
+#button:hover .ring-button:nth-child(1) {
+    margin-top: 20px;
+    margin-left: -30px;
+    background-image: url('assets/images/nomask.png');
+}
+
+#button:hover .ring-button:nth-child(2) {
+    margin-top: 60px;
+    margin-left: -40px;
+    background-image: url('assets/images/history.png');
+}
+
+#button:hover .ring-button:nth-child(3) {
+    margin-top: 102px;
+    margin-left: -26px;
+    background-image: url('assets/images/message.png');
+}
+
+#button:hover .ring-button:nth-child(4) {
+    margin-top: 129px;
+    margin-left: 12px;
+    background-image: url('assets/images/setting.png');
+}
+
+#button:hover .ring-button:nth-child(5) {
+    margin-top: 128px;
+    margin-left: 60px;
+    background-image: url('assets/images/signin.png');
 }
