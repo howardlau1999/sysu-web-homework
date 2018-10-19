@@ -18,9 +18,6 @@ function removeClass(elem, classname) {
 }
 
 function init() {
-    var start = false;
-    var inside; 
-
     var walls = document.getElementsByClassName('wall');
     var maze = document.getElementsByClassName("maze")[0];
     var startBlock = document.getElementsByClassName("start-wrapper")[0];
@@ -31,7 +28,7 @@ function init() {
         if (!event) event = window.event;
         var to = event.relatedTarget ? event.relatedTarget : event.toElement;
         if (!this.contains(to)) {
-            inside = false;
+            maze.cheated = true;
             clearBlock();
         }
     }
@@ -44,26 +41,26 @@ function init() {
     startBlock.onmouseover = function () {
         clearBlock();
         removeClass(info, "info-display"); 
-        start = true;
-        inside = true;
+        maze.ingame = true;
+        maze.cheated = false;
     }
 
     endBlock.onmouseover = function () {
-        if (start) {
-            if (inside) {
+        if (maze.ingame) {
+            if (!maze.cheated) {
                 info.innerHTML = "You Win";
             } else {
                 info.innerHTML = "Don't cheat, you should start from the 'S' and move to the 'E' inside the maze!";
             }
             addClass(info, "info-display");
         }
-        start = false;
+        maze.ingame = false;
     }
 
     for (let i = 0; i < walls.length; ++i) {
         walls[i].onmouseover = function () {
-            if (start) {
-                start = false;
+            if (maze.ingame) {
+                maze.ingame = false;
                 addClass(this, "touched");
                 addClass(info, "info-display");
                 info.innerHTML = "You Lose";
