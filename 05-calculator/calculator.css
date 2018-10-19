@@ -22,6 +22,10 @@
     text-align: right;
 }
 
+.calculator input[disabled] {
+    background-color: #fff;
+}
+
 .calculator button {
     width: 45px;
     height: 45px;

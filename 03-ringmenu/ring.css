@@ -1,71 +1,87 @@
 * {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+}
 
 body {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
 
 ul {
-  list-style: none; }
+  list-style: none;
+}
 
 .page {
   font-weight: bold;
   color: #FFF;
-  font-size: 26px; }
+  font-size: 26px;
+}
 
 .mine {
   font-weight: bold;
   font-size: 30px;
-  color: #079E6E; }
+  color: #079E6E;
+}
 
-.page > img, .mine > img {
+.page > img,
+.mine > img {
   width: 34px;
-  height: 34px; }
+  height: 34px;
+}
 
 .user {
   position: absolute;
   left: 50px;
-  top: 20px; }
+  top: 20px;
+}
 
 .user span {
   position: relative;
   left: 20px;
-  top: -5px; }
+  top: -5px;
+}
 
 .comment {
   position: absolute;
   left: 40px;
   top: 64px;
-  font-size: 45px; }
+  font-size: 45px;
+}
 
 .comment span {
   position: relative;
   top: -5px;
-  left: 20px; }
+  left: 20px;
+}
 
 .comment img {
   width: 40px;
-  height: 40px; }
+  height: 40px;
+}
 
 .posted {
   position: absolute;
   left: 30px;
-  top: 115px; }
+  top: 115px;
+}
 
 .posted span {
   position: relative;
   left: 4px;
-  top: -5px; }
+  top: -5px;
+}
 
 .like {
   position: absolute;
   left: 95px;
-  top: 115px; }
+  top: 115px;
+}
 
 .like span {
   position: relative;
   left: 4px;
-  top: -5px; }
+  top: -5px;
+}
 
 .info-bar {
   position: absolute;
@@ -81,7 +97,8 @@ ul {
   -o-transition: all 0.3s ease 0.27s;
   -ms-transition: all 0.3s ease 0.27s;
   overflow: hidden;
-  opacity: 0; }
+  opacity: 0;
+}
 
 .center-button:hover .info-bar {
   width: 174px;
@@ -93,12 +110,14 @@ ul {
   -moz-transition: all 0.3s ease 0.27s;
   -webkit-transition: all 0.3s ease 0.27s;
   -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
+  -ms-transition: all 0.3s ease 0.27s;
+}
 
 .center-button {
   margin: 0 auto;
   left: 0;
-  right: 0; }
+  right: 0;
+}
 
 .apb {
   width: 36px;
@@ -116,7 +135,8 @@ ul {
   -ms-transition: 0.5s ease 0.27s;
   opacity: 0.6;
   background-color: #303f9f;
-  background-size: 80% 60%; }
+  background-size: 80% 60%;
+}
 
 .center-button:hover .apb {
   background-color: #303f9f;
@@ -125,7 +145,8 @@ ul {
   background-repeat: no-repeat;
   opacity: 1;
   width: 70px;
-  height: 70px; }
+  height: 70px;
+}
 
 .ring-menu {
   text-align: center;
@@ -134,32 +155,47 @@ ul {
   left: 0px;
   right: 0px;
   margin: 0 auto;
-  width: 216px;
-  height: 216px; }
+  width: 36px;
+  height: 36px;
+}
 
 .ring-button {
   width: 36px;
   height: 36px;
   border-radius: 50%;
+  margin-top: 60px;
+  margin-left: 35px;
   background-color: #6E6E6E;
   opacity: 0;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+  position: absolute;
   transition: all 0.3s ease 0.27s;
   -moz-transition: all 0.3s ease 0.27s;
   -webkit-transition: all 0.3s ease 0.27s;
   -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
+  -ms-transition: all 0.3s ease 0.27s;
+}
 
 .ring-button-wrapper {
   height: 36px;
   width: 36px;
-  position: absolute; }
+  position: absolute;
+}
+
+#control-ring {
+  position: absolute;
+  margin-left: 50px;
+}
 
 #control-ring-container {
-  margin: 0 auto;
-  left: 0;
-  right: 0; }
+  left: -65px;
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  top: -40px;
+  border-radius: 50%;
+}
 
 .unread {
   background-color: #F00;
@@ -170,183 +206,41 @@ ul {
   border-radius: 50%;
   text-align: center;
   right: -4.5px;
-  top: -4.5px; }
+  top: -4.5px;
+}
 
-.ring-button-wrapper:nth-child(1) {
-  transform: rotate(-130deg);
-  transition: all 0.3s ease 0.27s;
-  -moz-transition: all 0.3s ease 0.27s;
-  -webkit-transition: all 0.3s ease 0.27s;
-  -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
-
-.center-button:hover .ring-button-wrapper:nth-child(1) {
-  transform: rotate(-130deg);
-  width: 70px;
-  height: 70px;
-  transition: all 0.3s ease 0.27s;
-  -moz-transition: all 0.3s ease 0.27s;
-  -webkit-transition: all 0.3s ease 0.27s;
-  -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
-
-.center-button:hover .ring-button-wrapper:nth-child(1) > .ring-button {
-  transform: translateX(-54px) rotate(130deg);
+#button:hover .ring-button {
   opacity: 1;
-  transition: all 0.3s ease 0.27s;
-  -moz-transition: all 0.3s ease 0.27s;
-  -webkit-transition: all 0.3s ease 0.27s;
-  -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
+}
 
-.ring-button-wrapper:nth-child(2) {
-  transform: rotate(-94deg);
-  transition: all 0.3s ease 0.27s;
-  -moz-transition: all 0.3s ease 0.27s;
-  -webkit-transition: all 0.3s ease 0.27s;
-  -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
+#button:hover .ring-button:nth-child(1) {
+  margin-top: 20px;
+  margin-left: -30px;
+  background-image: url("assets/images/nomask.png");
+}
 
-.center-button:hover .ring-button-wrapper:nth-child(2) {
-  transform: rotate(-94deg);
-  width: 70px;
-  height: 70px;
-  transition: all 0.3s ease 0.27s;
-  -moz-transition: all 0.3s ease 0.27s;
-  -webkit-transition: all 0.3s ease 0.27s;
-  -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
+#button:hover .ring-button:nth-child(2) {
+  margin-top: 60px;
+  margin-left: -40px;
+  background-image: url("assets/images/history.png");
+}
 
-.center-button:hover .ring-button-wrapper:nth-child(2) > .ring-button {
-  transform: translateX(-54px) rotate(94deg);
-  opacity: 1;
-  transition: all 0.3s ease 0.27s;
-  -moz-transition: all 0.3s ease 0.27s;
-  -webkit-transition: all 0.3s ease 0.27s;
-  -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
+#button:hover .ring-button:nth-child(3) {
+  margin-top: 102px;
+  margin-left: -26px;
+  background-image: url("assets/images/message.png");
+}
 
-.ring-button-wrapper:nth-child(3) {
-  transform: rotate(-58deg);
-  transition: all 0.3s ease 0.27s;
-  -moz-transition: all 0.3s ease 0.27s;
-  -webkit-transition: all 0.3s ease 0.27s;
-  -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
+#button:hover .ring-button:nth-child(4) {
+  margin-top: 129px;
+  margin-left: 12px;
+  background-image: url("assets/images/setting.png");
+}
 
-.center-button:hover .ring-button-wrapper:nth-child(3) {
-  transform: rotate(-58deg);
-  width: 70px;
-  height: 70px;
-  transition: all 0.3s ease 0.27s;
-  -moz-transition: all 0.3s ease 0.27s;
-  -webkit-transition: all 0.3s ease 0.27s;
-  -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
-
-.center-button:hover .ring-button-wrapper:nth-child(3) > .ring-button {
-  transform: translateX(-54px) rotate(58deg);
-  opacity: 1;
-  transition: all 0.3s ease 0.27s;
-  -moz-transition: all 0.3s ease 0.27s;
-  -webkit-transition: all 0.3s ease 0.27s;
-  -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
-
-.ring-button-wrapper:nth-child(4) {
-  transform: rotate(-22deg);
-  transition: all 0.3s ease 0.27s;
-  -moz-transition: all 0.3s ease 0.27s;
-  -webkit-transition: all 0.3s ease 0.27s;
-  -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
-
-.center-button:hover .ring-button-wrapper:nth-child(4) {
-  transform: rotate(-22deg);
-  width: 70px;
-  height: 70px;
-  transition: all 0.3s ease 0.27s;
-  -moz-transition: all 0.3s ease 0.27s;
-  -webkit-transition: all 0.3s ease 0.27s;
-  -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
-
-.center-button:hover .ring-button-wrapper:nth-child(4) > .ring-button {
-  transform: translateX(-54px) rotate(22deg);
-  opacity: 1;
-  transition: all 0.3s ease 0.27s;
-  -moz-transition: all 0.3s ease 0.27s;
-  -webkit-transition: all 0.3s ease 0.27s;
-  -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
-
-.ring-button-wrapper:nth-child(5) {
-  transform: rotate(14deg);
-  transition: all 0.3s ease 0.27s;
-  -moz-transition: all 0.3s ease 0.27s;
-  -webkit-transition: all 0.3s ease 0.27s;
-  -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
-
-.center-button:hover .ring-button-wrapper:nth-child(5) {
-  transform: rotate(14deg);
-  width: 70px;
-  height: 70px;
-  transition: all 0.3s ease 0.27s;
-  -moz-transition: all 0.3s ease 0.27s;
-  -webkit-transition: all 0.3s ease 0.27s;
-  -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
-
-.center-button:hover .ring-button-wrapper:nth-child(5) > .ring-button {
-  transform: translateX(-54px) rotate(-14deg);
-  opacity: 1;
-  transition: all 0.3s ease 0.27s;
-  -moz-transition: all 0.3s ease 0.27s;
-  -webkit-transition: all 0.3s ease 0.27s;
-  -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
-
-.ring-button-wrapper:nth-child(6) {
-  transform: rotate(50deg);
-  transition: all 0.3s ease 0.27s;
-  -moz-transition: all 0.3s ease 0.27s;
-  -webkit-transition: all 0.3s ease 0.27s;
-  -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
-
-.center-button:hover .ring-button-wrapper:nth-child(6) {
-  transform: rotate(50deg);
-  width: 70px;
-  height: 70px;
-  transition: all 0.3s ease 0.27s;
-  -moz-transition: all 0.3s ease 0.27s;
-  -webkit-transition: all 0.3s ease 0.27s;
-  -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
-
-.center-button:hover .ring-button-wrapper:nth-child(6) > .ring-button {
-  transform: translateX(-54px) rotate(-50deg);
-  opacity: 1;
-  transition: all 0.3s ease 0.27s;
-  -moz-transition: all 0.3s ease 0.27s;
-  -webkit-transition: all 0.3s ease 0.27s;
-  -o-transition: all 0.3s ease 0.27s;
-  -ms-transition: all 0.3s ease 0.27s; }
-
-.ring-button#signout {
-  background-image: url("./assets/images/signout.png"); }
-
-.ring-button#setting {
-  background-image: url("./assets/images/setting.png"); }
-
-.ring-button#message {
-  background-image: url("./assets/images/message.png"); }
-
-.ring-button#history {
-  background-image: url("./assets/images/history.png"); }
-
-.ring-button#mask {
-  background-image: url("./assets/images/mask.png"); }
+#button:hover .ring-button:nth-child(5) {
+  margin-top: 128px;
+  margin-left: 60px;
+  background-image: url("assets/images/signin.png");
+}
 
 /*# sourceMappingURL=ring.css.map */
