@@ -1,0 +1,29 @@
+table {
+    border-spacing: 0;
+}
+
+thead {
+    color: white;
+    background-color: darkblue;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #DDD;
+
+}
+
+td {
+    border: solid 1px #AAA;
+    margin: 0;
+    
+}
+
+.ascend {
+    background: url('../images/ascend.png') center no-repeat;
+    background-size: contain;
+}
+.descend {
+    background: url('../images/descend.png') center no-repeat;
+    background-size: contain;
+}
