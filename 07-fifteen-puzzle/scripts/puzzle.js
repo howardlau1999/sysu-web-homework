@@ -87,12 +87,13 @@ function init(PuzzleGame) {
     var last;
     while ((last = puzzle.lastChild)) puzzle.removeChild(last);
   })();
-  var border = PuzzleGame.border;
-  PuzzleGame.border = 1;
-  puzzle.style.width = PuzzleGame.width + "px";
-  puzzle.style.height = PuzzleGame.height + "px";
   PuzzleGame.block_width = PuzzleGame.width / PuzzleGame.level;
   PuzzleGame.block_height = PuzzleGame.height / PuzzleGame.level;
+  PuzzleGame.border = 1;
+  
+  puzzle.style.width = PuzzleGame.width + "px";
+  puzzle.style.height = PuzzleGame.height + "px";
+  
   puzzle.blocks = [];
   puzzle.empty_row = PuzzleGame.level - 1;
   puzzle.empty_col = PuzzleGame.level - 1;
@@ -106,21 +107,27 @@ function init(PuzzleGame) {
 
       var block = document.createElement("div");
       block.className = "block";
+
       block.style.width = PuzzleGame.block_width + "px";
       block.style.height = PuzzleGame.block_height + "px";
 
       block.style.backgroundImage = "url(" + PuzzleGame.img_url + ")";
       block.style.backgroundPositionX = -PuzzleGame.block_width * col + "px";
       block.style.backgroundPositionY = -PuzzleGame.block_height * row + "px";
+    
       block.row = row;
       block.col = col;
       block.block_id = row * PuzzleGame.level + col;
+
+      var border = PuzzleGame.border;
       block.style.marginTop = block.row * (PuzzleGame.block_height + border) + "px";
       block.style.marginLeft = block.col * (PuzzleGame.block_width + border) + "px";
 
       block.move = move;
       block.move_to_empty = move_to_empty;
-      block.onclick = e => {
+      block.puzzle = puzzle;
+
+      block.onclick = (e) => {
         if (e.target.move_to_empty()) ++puzzle.steps;
         if (puzzle.check_finished())
           setTimeout(() => {
@@ -128,8 +135,8 @@ function init(PuzzleGame) {
           }, 200);
       };
 
+      
       row_items.push(block);
-      block.puzzle = puzzle;
       puzzle.appendChild(block);
     }
     puzzle.blocks.push(row_items);
