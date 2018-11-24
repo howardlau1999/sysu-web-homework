@@ -10,42 +10,32 @@
     <link rel="stylesheet" href="./register.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>
-    <script type="text/javascript" src="./register.js"></script>
     <title>Sign Up</title>
 </head>
 
 <body>
     <div class="register-form">
-        <h2>注册</h2>
+        <h2>用户详情</h2>
         <form class="pure-form pure-form-aligned">
             <fieldset>
                 <div class="pure-control-group">
                     <label for="username">用户名</label>
-                    <input name="username" id="username" type="text" placeholder="用户名" required>
-                    <span class="pure-form-message-inline errmsg"></span>
+                    {{username}}
                 </div>
 
                 <div class="pure-control-group">
                     <label for="password">学号</label>
-                    <input name="stuid" id="stuid" type="text" placeholder="学号" required>
-                    <span class="pure-form-message-inline errmsg"></span>
+                    {{stuid}}
                 </div>
 
                 <div class="pure-control-group">
                     <label for="email">电子邮件</label>
-                    <input name="email" id="email" type="email" placeholder="电子邮件" required>
-                    <span class="pure-form-message-inline errmsg"></span>
+                    {{email}}
                 </div>
 
                 <div class="pure-control-group">
                     <label for="phone">手机号码</label>
-                    <input name="phone" id="phone" type="text" placeholder="手机号码" required>
-                    <span class="pure-form-message-inline errmsg"></span>
-                </div>
-
-                <div class="pure-controls">
-                    <button class="pure-button" type="reset">重置</button>
-                    <button id="submit" class="pure-button pure-button-primary">注册</button>
+                    {{phone}}
                 </div>
             </fieldset>
         </form>

@@ -3,51 +3,28 @@
 */
 var http = require('http'),
     fs = require('fs'),
-    url = require('url');
+    url = require('url'),
+    render = require('./utils/render'),
+    database = require('./utils/database'),
+    views = require('./views'),
+    routers = require('./server/routers'),
+    querystring = require('querystring');
 
-var data = [{
-    "username": "test",
-    "stuid": 17343000,
-    "phone": 18500000000,
-    "email": "test@example.com"
-}];
+router = [
+    routers.serve_static,
+    routers.serve_dynamic(views),
+    routers.fallback
+];
 
-function parse_query(query) {
+function process(req, res, i) {
+    if (i >= router.length)
+        return;
 
-    var obj = {};
-    var pairs = query.split("&");
-    for (var i = 0; i < pairs.length; ++i) {
-        pair = pairs[i].split("=");
-        obj[pair[0]] = pair[1];
-    }
-    return obj;
+    router[i](req, res, () => process(req, res, i + 1));
 }
-fs.writeFileSync("users.json", JSON.stringify(data));
-var server = http.createServer((request, response) => {
-    response.writeHead(200, "OK");
-    var query = url.parse(request.url).query;
-    if (query) {
-        var GET = parse_query(query);
-        var detail_template = fs.readFileSync("./public/detail.html").toString();
-        var user = {};
-        for (var i = 0; i < data.length; ++i) {
-            if (data[i].username == GET.username) {
-                user = data[i];
 
-                break;
-            }
-        }
-        for (const key in user) {
-            if (user.hasOwnProperty(key)) {
-                const element = user[key];
-                detail_template = detail_template.replace("{{" + key + "}}", element);
-            }
-        }
-        response.write(detail_template);
-    }
-
-
-    response.end();
+var server = http.createServer((req, res) => {
+    process(req, res, 0);
 });
 
 server.listen(8080);
