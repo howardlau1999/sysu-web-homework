@@ -11,7 +11,6 @@ function POST(req, res) {
     });
     req.on('end', function () {
         const query = JSON.parse(json);
-        console.log(json);
         if (!query) {
             res.statusCode = 400;
             res.end(JSON.stringify({
