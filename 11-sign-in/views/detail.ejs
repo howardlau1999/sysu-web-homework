@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/register.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <div class="register-form">
+        <% if (wrong_username) { %> 
+            <h4>只能够访问自己的数据</h4>    
+        <%}%>
+        <h2>用户详情</h2>
+        <form class="pure-form pure-form-aligned">
+            <fieldset>
+                <div class="pure-control-group">
+                    <label for="username">用户名</label>
+                    <%= user.username %>
+                </div>
+
+                <div class="pure-control-group">
+                    <label for="password">学号</label>
+                    <%= user.stuid %>
+                </div>
+
+                <div class="pure-control-group">
+                    <label for="email">电子邮件</label>
+                    <%= user.email %>
+                </div>
+
+                <div class="pure-control-group">
+                    <label for="phone">手机号码</label>
+                    <%= user.phone %>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/register.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>
+    <script type="text/javascript" src="/login.js"></script>
+    <title>Sign In</title>
+</head>
+
+<body>
+    <div class="register-form">
+        <h2>登录</h2>
+        <form class="pure-form pure-form-aligned">
+            <fieldset>
+                <div class="pure-control-group">
+                    <label for="username">用户名</label>
+                    <input name="username" id="username" type="text" placeholder="用户名" required>
+                    <span class="pure-form-message-inline errmsg"></span>
+                </div>
+
+                <div class="pure-control-group">
+                    <label for="password">密码</label>
+                    <input name="password" id="password" type="password" placeholder="密码" required>
+                    <span class="pure-form-message-inline errmsg"></span>
+                </div>
+
+                <div class="pure-controls">
+                    <button class="pure-button" type="reset">重置</button>
+                    <button id="submit" class="pure-button pure-button-primary">登录</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
