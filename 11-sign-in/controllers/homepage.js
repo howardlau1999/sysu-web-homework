@@ -10,10 +10,10 @@ module.exports = new Router('/', {
     "get": function (req, res) {
         if (req.query.username) {
             if (req.user && req.user.username !== req.query.username) {
-                res.redirect('/user/profile/wrong_username=true');
+                res.redirect('/user/detail/wrong_username=true');
                 return;
             } else {
-                res.redirect('/user/profile');
+                res.redirect('/user/detail');
                 return;
             }
         }
