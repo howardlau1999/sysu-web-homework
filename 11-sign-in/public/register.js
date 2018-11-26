@@ -9,11 +9,19 @@ $(document).ready(function() {
             password: password.value
         };
 
+        if (password.value != passwordconfirm.value) {
+            $("#passwordconfirm+.errmsg").html("两次输入的密码不一致");
+            return;
+        } else {
+            $("#passwordconfirm+.errmsg").html("");
+        }
+
         let validations = {
             "username": /^[a-zA-Z]\w{5,17}$/,
             "stuid": /^[1-9]\d{7}$/,
             "phone": /^[1-9]\d{10}$/,
-            "email": /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
+            "email": /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+            "password": /^[0-9a-zA-Z\-_]{6,12}$/,
         };
 
         let errmsgs = {
@@ -21,6 +29,7 @@ $(document).ready(function() {
             "stuid": "学号不合法",
             "phone": "手机号码不合法",
             "email": "电子邮件不合法",
+            "password": "密码不合法"
         };
 
         let conflict_msg = {
@@ -28,13 +37,12 @@ $(document).ready(function() {
             "stuid": "学号已存在",
             "phone": "手机号码已存在",
             "email": "电子邮件已存在",
+            "password": "密码不合法"
         };
 
         for (let key of Object.keys(validations)) {
             $("#" + key + "+." + "errmsg").html("");
         };
-
-        let formData = new FormData();
 
         let invalid = false;
 
@@ -63,7 +71,8 @@ $(document).ready(function() {
         }).then(data => {
             if (!data) return;
             if (status == 400) {
-                $("#" + data.field + "+." + "errmsg").html(conflict_msg[data.field]);
+                if (data.type == "conflict")
+                    $("#" + data.field + "+." + "errmsg").html(conflict_msg[data.field]);
             } else {
                 alert(data.msg);
             }

@@ -1,8 +1,8 @@
 const ejs = require('ejs'),
     fs = require('fs'),
     middlewares = require('../middlewares'),
-    render = ejs.compile(fs.readFileSync('./views/index.ejs', 'UTF-8'), {
-        filename: './views/index.ejs'
+    render = ejs.compile(fs.readFileSync('./views/login.ejs', 'UTF-8'), {
+        filename: './views/login.ejs'
     }),
     Router = require("../server/urls");
 
