@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const url = 'mongodb://localhost:27017/users';
+const mongoose = require('mongoose'),
+    bcrypt = require("bcrypt");
 
 const usersSchema = new mongoose.Schema({
     username: {
@@ -32,11 +32,16 @@ const usersSchema = new mongoose.Schema({
     }
 });
 
-usersSchema.statics.authenticate = function(username, password, callback) {
-    User.findOne({ username }).exec((err, res) => {
+usersSchema.statics.authenticate = function (username, password, callback) {
+    User.findOne({
+        username
+    }).exec((err, res) => {
         if (err) return callback(err);
         else if (!res) return callback(null, undefined);
-        else return callback(null, res.password === password ? res : null);
+        else {
+            const password_correct = bcrypt.compareSync(password, res.password);
+            return callback(null, password_correct ? res : null);
+        }
     })
 }
 

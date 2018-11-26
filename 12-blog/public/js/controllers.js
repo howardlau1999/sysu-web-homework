@@ -2,6 +2,21 @@
 
 /* Controllers */
 
+function UserLoginCtrl($scope, $http) {
+  $scope.user = {}
+  $scope.login = function() {
+    $http.post('/api/login', $scope.user).success(
+      function(data) {
+        $location.path('/');
+      }
+    )
+  }
+}
+
+function UserRegisterCtrl($scope, $http, $location) {
+  
+}
+
 function IndexCtrl($scope, $http) {
   $http.get('/api/posts').
     success(function(data, status, headers, config) {

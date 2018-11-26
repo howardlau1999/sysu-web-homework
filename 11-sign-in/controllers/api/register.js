@@ -1,5 +1,6 @@
 const User = require('../../models/User'),
-    Router = require("../../server/urls");
+    Router = require("../../server/urls"),
+    bcrypt = require("bcrypt");
 
 function post(req, res, next) {
 
@@ -43,8 +44,7 @@ function post(req, res, next) {
             return;
         }
     }
-
-    User.create(new_user, function (err, user) {
+    new_user['password'] = bcrypt.hashSync(new_user['password'], 10);    User.create(new_user, function (err, user) {
         if (err) return next(err);
         else {
             res.status(200).send({
