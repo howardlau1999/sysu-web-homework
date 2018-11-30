@@ -1,0 +1,261 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.hide {
+  display: none;
+}
+
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+.page {
+  font-weight: bold;
+  color: #FFF;
+  font-size: 26px;
+}
+
+.mine {
+  font-weight: bold;
+  font-size: 30px;
+  color: #079E6E;
+}
+
+.page>img,
+.mine>img {
+  width: 34px;
+  height: 34px;
+}
+
+.user {
+  position: absolute;
+  left: 50px;
+  top: 20px;
+}
+
+.user span {
+  position: relative;
+  left: 20px;
+  top: -5px;
+}
+
+.comment {
+  position: absolute;
+  left: 70px;
+  top: 64px;
+  font-size: 45px;
+}
+
+.comment span {
+  position: relative;
+  top: -5px;
+  left: 20px;
+}
+
+.comment img {
+  width: 40px;
+  height: 40px;
+}
+
+.posted {
+  position: absolute;
+  left: 30px;
+  top: 115px;
+}
+
+.posted span {
+  position: relative;
+  left: 4px;
+  top: -5px;
+}
+
+.like {
+  position: absolute;
+  left: 95px;
+  top: 115px;
+}
+
+.like span {
+  position: relative;
+  left: 4px;
+  top: -5px;
+}
+
+.info-bar {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 80px;
+  border-radius: 50%;
+  background-color: #7E7E7E;
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.center-button:hover .info-bar {
+  width: 174px;
+  height: 174px;
+  left: -50px;
+  top: -184px;
+  opacity: 1;
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s;
+}
+
+.center-button {
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.apb {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #6E6E6E;
+  position: absolute;
+  background-image: url("./assets/images/atplus_white.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  transition: 0.5s ease 0.27s;
+  -moz-transition: 0.5s ease 0.27s;
+  -webkit-transition: 0.5s ease 0.27s;
+  -o-transition: 0.5s ease 0.27s;
+  -ms-transition: 0.5s ease 0.27s;
+  opacity: 0.6;
+  background-color: #303f9f;
+  background-size: 80% 60%;
+}
+
+.center-button:hover .apb {
+  background-color: #303f9f;
+  background-image: url("./assets/images/atplus_green.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 1;
+  width: 70px;
+  height: 70px;
+}
+
+.ring-menu {
+  text-align: center;
+  position: fixed;
+  top: 500px;
+  left: 0px;
+  right: 0px;
+  margin: 0 auto;
+  width: 36px;
+  height: 36px;
+}
+
+.ring-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-top: 60px;
+  margin-left: 35px;
+  background-color: #303f9f;
+  cursor: pointer;
+  opacity: 0;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  transition: all 0.3s ease 0.27s;
+  -moz-transition: all 0.3s ease 0.27s;
+  -webkit-transition: all 0.3s ease 0.27s;
+  -o-transition: all 0.3s ease 0.27s;
+  -ms-transition: all 0.3s ease 0.27s;
+}
+
+#info-bar.enabled {
+  background-color: #303f9f;
+  cursor: pointer;
+}
+
+.ring-button.disabled {
+  background-color: #6E6E6E;
+  cursor: auto;
+}
+
+.ring-button-wrapper {
+  height: 36px;
+  width: 36px;
+  position: absolute;
+}
+
+#control-ring {
+  position: absolute;
+  margin-left: 50px;
+}
+
+#control-ring-container {
+  left: -65px;
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  top: -40px;
+  border-radius: 50%;
+}
+
+.unread {
+  background-color: #F00;
+  color: white;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  text-align: center;
+  right: -4.5px;
+  top: -4.5px;
+  line-height: 18px;
+}
+
+#button:hover .ring-button {
+  opacity: 1;
+  vertical-align: middle;
+  color: white;
+  line-height: 36px;
+}
+
+#button:hover .ring-button:nth-child(1) {
+  margin-top: 20px;
+  margin-left: -30px;
+}
+
+#button:hover .ring-button:nth-child(2) {
+  margin-top: 60px;
+  margin-left: -40px;
+}
+
+#button:hover .ring-button:nth-child(3) {
+  margin-top: 102px;
+  margin-left: -26px;
+
+}
+
+#button:hover .ring-button:nth-child(4) {
+  margin-top: 129px;
+  margin-left: 12px;
+}
+
+#button:hover .ring-button:nth-child(5) {
+  margin-top: 128px;
+  margin-left: 60px;
+}
+
+/*# sourceMappingURL=ring.css.map */
