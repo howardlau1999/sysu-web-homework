@@ -17,6 +17,12 @@ module.exports = new Router('/', {
                 return;
             }
         }
+        
+        if (req.user) {
+            res.redirect('/user/detail');
+            return;
+        }
+
         res.send(render({
             user: req.user
         }));

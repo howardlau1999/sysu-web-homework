@@ -45,6 +45,7 @@ $(document).ready(function () {
         }
         $(this).find("#sum").html(sum);
     });
+    
     $(".apb").click(function() {
         $("li.ring-button").click();
     });
